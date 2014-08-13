@@ -79,11 +79,13 @@
   <ItemGroup>
     <Compile Include="Calculator.cs" />
     <Compile Include="MessageGenerator.cs" />
-    <Compile Include="web\application\catalog_browsing\IFindDepartments .cs" />
+    <Compile Include="web\application\catalog_browsing\IFindDepartments.cs" />
+    <Compile Include="web\application\catalog_browsing\MainDepartmentLineItem.cs" />
     <Compile Include="web\application\catalog_browsing\ViewTheMainDepartments.cs" />
     <Compile Include="web\core\CommandRegistry.cs" />
     <Compile Include="web\core\FrontController.cs" />
     <Compile Include="web\core\ICreateACommandWhenOneCantBeFound.cs" />
+    <Compile Include="web\core\IDisplayInformation.cs" />
     <Compile Include="web\core\IFindCommandsThatCanProcessRequests.cs" />
     <Compile Include="web\core\IMatchARequest.cs" />
     <Compile Include="web\core\IProcessOneRequest.cs" />

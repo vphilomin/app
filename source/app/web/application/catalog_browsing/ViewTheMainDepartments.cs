@@ -2,18 +2,21 @@
 
 namespace app.web.application.catalog_browsing
 {
-    public class ViewTheMainDepartments : ISupportAUserStory
+  public class ViewTheMainDepartments : ISupportAUserStory
+  {
+    IFindDepartments department_finder;
+    IDisplayInformation display_engine;
+
+    public ViewTheMainDepartments(IFindDepartments department_finder, IDisplayInformation display_engine)
     {
-        private readonly IFindDepartments findDepartments;
-
-        public ViewTheMainDepartments(IFindDepartments findDepartments)
-        {
-            this.findDepartments = findDepartments;
-        }
-
-        public void process(IProvideRequestDetails request)
-        {
-            findDepartments.get_the_main_departments();
-        }
+      this.department_finder = department_finder;
+      this.display_engine = display_engine;
     }
+
+    public void process(IProvideRequestDetails request)
+    {
+      var departments = department_finder.get_the_main_departments();
+      display_engine.display(departments);
+    }
+  }
 }
