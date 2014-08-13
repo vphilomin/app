@@ -2,6 +2,6 @@
 {
   public class MainDepartmentLineItem
   {
-     
+    public string name { get; set; }
   }
 }

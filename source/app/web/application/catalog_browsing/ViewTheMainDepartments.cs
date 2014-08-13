@@ -1,4 +1,6 @@
-﻿using app.web.core;
+﻿using app.web.application.catalog_browsing.stubs;
+using app.web.aspnet;
+using app.web.core;
 
 namespace app.web.application.catalog_browsing
 {
@@ -11,6 +13,11 @@ namespace app.web.application.catalog_browsing
     {
       this.department_finder = department_finder;
       this.display_engine = display_engine;
+    }
+
+    public ViewTheMainDepartments() : this(new StubDepartmentFinder(),
+      new WebFormDisplayEngine())
+    {
     }
 
     public void process(IProvideRequestDetails request)
