@@ -2,14 +2,21 @@
 {
   public class RequestCommand : IProcessOneRequest
   {
-    public void process(IProvideRequestDetails request)
+      private readonly IMatchARequest matchARequest;
+
+      public RequestCommand(IMatchARequest matchARequest)
+      {
+          this.matchARequest = matchARequest;
+      }
+
+      public void process(IProvideRequestDetails request)
     {
       throw new System.NotImplementedException();
     }
 
     public bool can_process(IProvideRequestDetails request)
     {
-      throw new System.NotImplementedException();
+        return matchARequest(request);
     }
   }
 }
