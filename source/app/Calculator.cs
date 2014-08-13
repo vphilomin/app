@@ -32,7 +32,6 @@ namespace app
 
     public void shut_off()
     {
-      // Small change
         if (Thread.CurrentPrincipal.IsInRole("blah"))
             return;
         throw new SecurityException("Not allowed");
