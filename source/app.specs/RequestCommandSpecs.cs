@@ -1,4 +1,5 @@
 ﻿ using app.web;
+ using app.web.core;
  using Machine.Specifications;
  using developwithpassion.specifications.rhinomocks;
  using developwithpassion.specifications.extensions;
@@ -33,6 +34,24 @@ namespace app.specs
         result.ShouldBeTrue();
 
       static bool result;
+      static IProvideRequestDetails request;
+    }
+
+    public class when_processing_the_request : concern
+    {
+      Establish c = () =>
+      {
+        request = fake.an<IProvideRequestDetails>();
+        feature = depends.on<ISupportAUserStory>();
+      };
+
+      Because b = () =>
+        sut.process(request);
+
+      It runs_the_application_feature = () =>
+        feature.received(x => x.process(request));
+
+      static ISupportAUserStory feature;
       static IProvideRequestDetails request;
     }
   }
