@@ -128,4 +128,7 @@
     <PostBuildEvent>cd $(SolutionDir)
 rake copy_config_files</PostBuildEvent>
   </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>77</PreBuildEvent>
+  </PropertyGroup>
 </Project>
