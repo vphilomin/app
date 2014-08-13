@@ -81,6 +81,7 @@
     <Compile Include="MessageGenerator.cs" />
     <Compile Include="web\CommandRegistry.cs" />
     <Compile Include="web\FrontController.cs" />
+    <Compile Include="web\ICreateACommandWhenOneCantBeFound.cs" />
     <Compile Include="web\IFindCommandsThatCanProcessRequests.cs" />
     <Compile Include="web\IProcessOneRequest.cs" />
     <Compile Include="web\IProcessWebRequests.cs" />

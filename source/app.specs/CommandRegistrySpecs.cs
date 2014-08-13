@@ -45,6 +45,33 @@ namespace app.specs
         static List<IProcessOneRequest> all_the_commands;
       }    
         
+      public class and_it_does_not_have_the_command
+      {
+        Establish c = () =>
+        {
+          request = fake.an<IProvideRequestDetails>();
+          the_missing_command = fake.an<IProcessOneRequest>();
+          all_the_commands = Enumerable.Range(1, 1000).Select(x => fake.an<IProcessOneRequest>()).ToList();
+
+          depends.on<IEnumerable<IProcessOneRequest>>(all_the_commands);
+          depends.on<ICreateACommandWhenOneCantBeFound>(x =>
+          {
+            x.ShouldEqual(request);
+            return the_missing_command; 
+          });
+        };
+
+        Because b = () =>
+          result = sut.get_the_command_that_can_process(request);
+
+        It returns_the_command_created_by_the_missing_command_factory = () =>
+          result.ShouldEqual(the_missing_command);
+
+        static IProcessOneRequest result;
+        static IProcessOneRequest the_missing_command;
+        static IProvideRequestDetails request;
+        static List<IProcessOneRequest> all_the_commands;
+      }    
     }
   }
 }
