@@ -37,3 +37,4 @@ source/app.web.ui/web.*.config
 packages
 !/packages/repositories.config
 our_custom_config.txt
+bin/*
