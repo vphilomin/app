@@ -114,6 +114,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CalculatorSpecs.cs" />
+    <Compile Include="CommandRegistrySpecs.cs" />
+    <Compile Include="FrontControllerSpecs.cs" />
     <Compile Include="MessageGeneratorSpecs.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
