@@ -81,10 +81,13 @@
     <Compile Include="MessageGenerator.cs" />
     <Compile Include="web\CommandRegistry.cs" />
     <Compile Include="web\FrontController.cs" />
+    <Compile Include="web\ICreateACommandWhenOneCantBeFound.cs" />
     <Compile Include="web\IFindCommandsThatCanProcessRequests.cs" />
+    <Compile Include="web\IMatchARequest.cs" />
     <Compile Include="web\IProcessOneRequest.cs" />
     <Compile Include="web\IProcessWebRequests.cs" />
     <Compile Include="web\IProvideRequestDetails.cs" />
+    <Compile Include="web\RequestCommand.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

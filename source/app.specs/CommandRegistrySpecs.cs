@@ -1,22 +1,20 @@
-﻿ using System.Collections.Generic;
- using System.Linq;
- using app.web;
- using Machine.Specifications;
- using developwithpassion.specifications.rhinomocks;
- using developwithpassion.specifications.extensions;
+﻿using System.Collections.Generic;
+using System.Linq;
+using app.web;
+using developwithpassion.specifications.extensions;
+using developwithpassion.specifications.rhinomocks;
+using Machine.Specifications;
 
 namespace app.specs
-{  
-  [Subject(typeof(CommandRegistry))]  
+{
+  [Subject(typeof(CommandRegistry))]
   public class CommandRegistrySpecs
   {
     public abstract class concern : Observes<IFindCommandsThatCanProcessRequests,
       CommandRegistry>
     {
-        
     }
 
-   
     public class when_finding_a_command_that_can_process_a_request : concern
     {
       public class and_it_has_the_command
@@ -43,8 +41,8 @@ namespace app.specs
         static IProcessOneRequest the_command_that_can_process;
         static IProvideRequestDetails request;
         static List<IProcessOneRequest> all_the_commands;
-      }    
-        
+      }
+
       public class and_it_does_not_have_the_command
       {
         Establish c = () =>
@@ -58,7 +56,7 @@ namespace app.specs
           depends.on<ICreateACommandWhenOneCantBeFound>(x =>
           {
             x.ShouldEqual(request);
-            return the_missing_command; 
+            return the_missing_command;
           });
         };
 
@@ -72,7 +70,7 @@ namespace app.specs
         static IProcessOneRequest the_missing_command;
         static IProvideRequestDetails request;
         static List<IProcessOneRequest> all_the_commands;
-      }    
+      }
     }
   }
 }
