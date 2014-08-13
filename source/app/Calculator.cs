@@ -5,20 +5,31 @@ namespace app
 {
   public class Calculator
   {
-      private readonly IDbConnection _connection;
+    IDbConnection connection;
 
-      public Calculator(IDbConnection connection)
+    public Calculator(IDbConnection connection)
+    {
+      this.connection = connection;
+    }
+
+    public int add(int i, int i1)
+    {
+      if (i < 0 || i1 < 0)
+        throw new ArgumentException("Negative numbers not allowed");
+
+      using(connection)
+      using (var command = connection.CreateCommand())
       {
-          _connection = connection;
+        connection.Open();
+        command.ExecuteNonQuery();
       }
 
-      public int add(int i, int i1)
-    {
-        if (i < 0 || i1 < 0)
-            throw new ArgumentException("Negative numbers not allowed");
+      return i + i1;
+    }
 
-        _connection.Open();
-        return i + i1;
+    public void shut_off()
+    {
+      throw new NotImplementedException();
     }
   }
 }
