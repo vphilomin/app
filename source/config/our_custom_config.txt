@@ -1,2 +1,0 @@
-[core]
-  custom_setting = Hello World

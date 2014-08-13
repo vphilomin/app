@@ -36,3 +36,4 @@ source/app.web.ui/web.*.config
 *.settings
 packages/**/*.bat
 packages/**/*.config
+our_custom_config.txt
