@@ -2,11 +2,18 @@
 
 namespace app.web.application.catalog_browsing
 {
-  public class ViewTheMainDepartments : ISupportAUserStory
-  {
-    public void process(IProvideRequestDetails request)
+    public class ViewTheMainDepartments : ISupportAUserStory
     {
-      throw new System.NotImplementedException();
+        private readonly IFindDepartments findDepartments;
+
+        public ViewTheMainDepartments(IFindDepartments findDepartments)
+        {
+            this.findDepartments = findDepartments;
+        }
+
+        public void process(IProvideRequestDetails request)
+        {
+            findDepartments.get_the_main_departments();
+        }
     }
-  }
 }
