@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using app.container;
 using app.web.application.catalog_browsing;
 using app.web.core;
 
@@ -22,7 +23,7 @@ namespace app.web.aspnet.stubs
 
     public IProcessOneRequest report_for<Output>(IFetchData<Output> query)
     {
-      return new RequestCommand(x => true, new ViewA<Output>(null, query));
+      return new RequestCommand(x => true, new ViewA<Output>(Dependencies.fetch.an<IDisplayInformation>(), query));
     }
 
     public IProcessOneRequest report_for<Output>(IRunAQuery<Output> query)
