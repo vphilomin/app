@@ -12,5 +12,10 @@ namespace app.web.application.catalog_browsing.stubs
         name = x.ToString("Department 0")
       });
     }
+
+      public IEnumerable<MainDepartmentLineItem> get_departments_of_department_specified_by_name(string name)
+      {
+          throw new System.NotImplementedException();
+      }
   }
 }

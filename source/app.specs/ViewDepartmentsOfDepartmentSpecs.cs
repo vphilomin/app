@@ -27,7 +27,7 @@ namespace app.specs
           request.setup(x => x.provide_request_details<string>()).Return("department");
         departments = new List<MainDepartmentLineItem>();
 
-        department_finder.setup(x => x.get_the_main_departments()).Return(departments);
+        department_finder.setup(x => x.get_departments_of_department_specified_by_name("department")).Return(departments);
       };
 
       Because b = () =>
