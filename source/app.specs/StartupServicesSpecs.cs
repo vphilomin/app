@@ -45,7 +45,7 @@ namespace app.specs
           factory_builder = depends.on<IBuildDependencyFactories>();
           the_factory = fake.an<ICreateOneDependency>();
 
-          factory_builder.setup(x => x.create_factory_for_implementation(instance)).Return(the_factory);
+          factory_builder.setup(x => x.create_factory_for_implementation<IDoSomething>(instance)).Return(the_factory);
         };
 
         Because b = () =>

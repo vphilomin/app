@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using app.basic_container;
 using app.startup;
 using developwithpassion.specifications.extensions;
 using developwithpassion.specifications.rhinomocks;
@@ -20,7 +23,7 @@ namespace app.specs
       {
         Establish c = () =>
         {
-          startup_services = fake.an<IProvideStartupServices>();
+          startup_services = new FakeServices();
           depends.on<Func<IProvideStartupServices>>(() => startup_services);
         };
 
@@ -49,8 +52,28 @@ namespace app.specs
 
       public void run()
       {
-        throw new NotImplementedException();
       }
+    }
+  }
+
+  class FakeServices : IProvideStartupServices
+  {
+    public IEnumerator<ICreateOneDependency> GetEnumerator()
+    {
+      yield return null;
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+      return GetEnumerator();
+    }
+
+    public void register<Contract, Implementation>()
+    {
+    }
+
+    public void register<Contract>(Contract instance)
+    {
     }
   }
 }

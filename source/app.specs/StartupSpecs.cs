@@ -1,5 +1,6 @@
 ﻿ using app.container;
  using app.startup;
+ using app.web.aspnet;
  using app.web.core;
  using Machine.Specifications;
  using developwithpassion.specifications.rhinomocks;
@@ -22,7 +23,10 @@ namespace app.specs
         Startup.run();
 
       It key_services_should_be_accessible_from_the_container = () =>
+      {
         Dependencies.fetch.an<IProcessWebRequests>().ShouldBeAn<FrontController>();
+        Dependencies.fetch.an<IGetTheCurrentHttpContext>().ShouldNotBeNull();
+      };
     }
   }
 }
