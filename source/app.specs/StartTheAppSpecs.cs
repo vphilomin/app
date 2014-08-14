@@ -13,7 +13,6 @@ namespace app.specs
 
     public class when_observation_name : concern
     {
-      It first_observation = () => 
     }
   }
 }
