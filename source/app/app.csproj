@@ -78,6 +78,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Calculator.cs" />
+    <Compile Include="container\Dependency.cs" />
+    <Compile Include="container\ICreateTheContainerFacade.cs" />
+    <Compile Include="container\IFetchDependencies.cs" />
     <Compile Include="MessageGenerator.cs" />
     <Compile Include="web\application\catalog_browsing\DeparmentsInDepartmentInput.cs" />
     <Compile Include="web\application\catalog_browsing\MainDepartmentLineItem.cs" />
