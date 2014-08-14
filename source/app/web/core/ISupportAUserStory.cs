@@ -2,6 +2,6 @@
 {
   public interface ISupportAUserStory
   {
-    void process(IProvideRequestDetails request);
+    void process(IProvideRequestDetails input);
   }
 }
