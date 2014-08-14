@@ -78,6 +78,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="basic_container\Container.cs" />
+    <Compile Include="basic_container\GetTheFactoryForADependency.cs" />
     <Compile Include="basic_container\ICreateAnErrorWhenCreationFails.cs" />
     <Compile Include="basic_container\ICreateOneDependency .cs" />
     <Compile Include="basic_container\IGetTheFactoryForADependency.cs" />
