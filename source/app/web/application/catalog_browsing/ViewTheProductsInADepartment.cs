@@ -1,40 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using app.web.application.catalog_browsing.stubs;
 using app.web.aspnet;
 using app.web.core;
 
 namespace app.web.application.catalog_browsing
 {
-    public class ViewTheProductsInADepartment : ISupportAUserStory
-    {
-        private readonly IFindProductsInADepartment _productFinder;
-        private readonly IDisplayInformation _displayEngine;
+  public class ViewTheProductsInADepartment : ISupportAUserStory
+  {
+    IFindProductsInADepartment product_finder;
+    IDisplayInformation display_engine;
 
-        public ViewTheProductsInADepartment()
-            : this(new StubProductFinder(),
-      new WebFormDisplayEngine())
+    public ViewTheProductsInADepartment()
+      : this(new StubProductFinder(),
+        new WebFormDisplayEngine())
     {
     }
 
-        public ViewTheProductsInADepartment(IFindProductsInADepartment productFinder, IDisplayInformation displayEngine)
-        {
-            _productFinder = productFinder;
-            _displayEngine = displayEngine;
-        }
-
-        public void process(IProvideRequestDetails request)
-        {
-            _displayEngine.display(_productFinder.get_products_of_department(request.map<ProductsInDepartmentInput>()));
-        }
-    }
-
-    public class StubProductFinder : IFindProductsInADepartment
+    public ViewTheProductsInADepartment(IFindProductsInADepartment product_finder, IDisplayInformation display_engine)
     {
-        public IEnumerable<ProductInfoItem> get_products_of_department(ProductsInDepartmentInput input)
-        {
-            return Enumerable.Range(1,100).Select(x => new ProductInfoItem(){Name = "Product" + x});
-        }
+      this.product_finder = product_finder;
+      this.display_engine = display_engine;
     }
+
+    public void process(IProvideRequestDetails request)
+    {
+      display_engine.display(product_finder.get_products_of_department(request.map<ProductsInDepartmentInput>()));
+    }
+  }
 }

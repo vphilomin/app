@@ -14,8 +14,7 @@ namespace app.web.aspnet.stubs
 
     public IEnumerator<IProcessOneRequest> GetEnumerator()
     {
-
-        yield return new RequestCommand(x => true, new ViewTheProductsInADepartment());
+      yield return new RequestCommand(x => true, new ViewTheProductsInADepartment());
       yield return new RequestCommand(x => true, new ViewTheDepartmentsOfDepartment());
       yield return new RequestCommand(x => true, new ViewTheMainDepartments());
     }
