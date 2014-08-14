@@ -15,7 +15,7 @@ namespace app.specs.utility
 
       static HttpRequest create_request()
       {
-        return new HttpRequest("blah.aspx", "http://localhost/blah.aspx",String.Empty);
+        return new HttpRequest("DepartmentBrowser.aspx", "http://localhost/department_browser.aspx",String.Empty);
       }
 
       static HttpResponse create_response()

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Web.Compilation;
+using app.basic_container;
 using app.web.core;
 
 namespace app.web.aspnet.stubs
@@ -16,7 +17,17 @@ namespace app.web.aspnet.stubs
       throw new NotImplementedException("You dont have a command to run this request");
     };
 
+    public static ICreateAFactoryWhenOneIsMissing missing_dependency_factory = (type) =>
+    {
+      throw new NotImplementedException(string.Format("No factory for {0}", type.FullName));
+    };
+
     public static ICreatePageInstances create_page = BuildManager.CreateInstanceFromVirtualPath;
+
+    public static ICreateAnErrorWhenCreationFails dependency_creation_error = (inner, type) =>
+    {
+      throw new NotImplementedException(string.Format("The type {0} could not be created", type), inner); 
+    };
 
     public class StubRequest : IProvideRequestDetails
     {
@@ -24,6 +35,11 @@ namespace app.web.aspnet.stubs
       {
         return Activator.CreateInstance<InputModel>();
       }
+    }
+
+    public static Predicate<Type> is_a<T>()
+    {
+      return x => x == typeof(T);
     }
   }
 }

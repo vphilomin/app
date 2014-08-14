@@ -78,15 +78,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="basic_container\Container.cs" />
-    <Compile Include="basic_container\GetTheFactoryForADependency.cs" />
+    <Compile Include="basic_container\DependencyFactories.cs" />
+    <Compile Include="basic_container\ICreateAFactoryWhenOneIsMissing.cs" />
     <Compile Include="basic_container\ICreateAnErrorWhenCreationFails.cs" />
     <Compile Include="basic_container\ICreateOneDependency .cs" />
     <Compile Include="basic_container\IGetTheFactoryForADependency.cs" />
+    <Compile Include="basic_container\SimpleFactory.cs" />
     <Compile Include="Calculator.cs" />
     <Compile Include="container\Dependencies.cs" />
     <Compile Include="container\IProvideAccessToTheContainerCreatedAtStartup.cs" />
     <Compile Include="container\IFetchDependencies.cs" />
     <Compile Include="MessageGenerator.cs" />
+    <Compile Include="startup\Startup.cs" />
     <Compile Include="structuremap_container\StructureMapContainer.cs" />
     <Compile Include="web\application\catalog_browsing\DeparmentsInDepartmentInput.cs" />
     <Compile Include="web\application\catalog_browsing\MainDepartmentLineItem.cs" />

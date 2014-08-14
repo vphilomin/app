@@ -1,6 +1,7 @@
 ﻿ using System.Net;
  using System.Web;
  using app.specs.utility;
+ using app.startup;
  using app.web.aspnet;
  using app.web.core;
  using Machine.Specifications;
@@ -44,5 +45,20 @@ namespace app.specs
       static HttpContext context;
       static IProvideRequestDetails a_new_request;
     }
+
+    public class when_run : concern
+    {
+      Establish c = () =>
+      {
+        Startup.run();
+        sut_factory.create_using(() => new AspnetRequestHandler());
+      };
+
+      It should_not_fail = () =>
+      {
+      };
+         
+    }
+
   }
 }
