@@ -1,7 +1,8 @@
-﻿namespace app.startup
+﻿using app.core;
+
+namespace app.startup
 {
-  public interface IRunAStartupStep
+  public interface IRunAStartupStep : IRun
   {
-    void run();
   }
 }

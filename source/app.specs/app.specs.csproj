@@ -116,6 +116,7 @@
     <Compile Include="AspnetRequestHandlerSpecs.cs" />
     <Compile Include="AutomaticallyWiringFactorySpecs.cs" />
     <Compile Include="CalculatorSpecs.cs" />
+    <Compile Include="CombinedActionSpecs.cs" />
     <Compile Include="CommandRegistrySpecs.cs" />
     <Compile Include="ContainerSpecs.cs" />
     <Compile Include="DependenciesSpecs.cs" />
@@ -125,7 +126,10 @@
     <Compile Include="RequestCommandSpecs.cs" />
     <Compile Include="SimpleFactorySpecs.cs" />
     <Compile Include="StartTheAppSpecs.cs" />
+    <Compile Include="StartupPipelineBuilderSpecs.cs" />
+    <Compile Include="StartupServicesSpecs.cs" />
     <Compile Include="StartupSpecs.cs" />
+    <Compile Include="StepFactorySpecs.cs" />
     <Compile Include="utility\ObjectFactory.cs" />
     <Compile Include="ViewSpecs.cs" />
     <Compile Include="WebFormDisplayEngineSpecs.cs" />

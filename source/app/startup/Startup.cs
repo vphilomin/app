@@ -4,9 +4,9 @@
   {
     public static void run()
     {
-//      StartTheApp.by<InitializingTheContainer>()
-//        .followed_by<RegisterWebComponents>()
-//        .finish_by<ConfiguringRoutes>();
+      StartTheApp.by<InitializingTheContainer>()
+        .followed_by<RegisterWebComponents>()
+        .finish_by<ConfiguringRoutes>();
     }
   }
 }

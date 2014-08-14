@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Web.Compilation;
 using app.basic_container;
+using app.core;
 using app.web.core;
 
 namespace app.web.aspnet.stubs
@@ -41,9 +42,16 @@ namespace app.web.aspnet.stubs
       }
     }
 
+    public static ICombineActions combine_actions = (first, second) => new CombinedAction(first, second);
+
     public static Predicate<Type> is_a<T>()
     {
       return x => x == typeof(T);
+    }
+
+    public static Predicate<Type> is_a(Type type)
+    {
+      return x => x == type;
     }
   }
 }
