@@ -84,6 +84,7 @@
     <Compile Include="web\application\catalog_browsing\stubs\StubDepartmentFinder.cs" />
     <Compile Include="web\application\catalog_browsing\ViewTheDepartmentsOfDepartment.cs" />
     <Compile Include="web\application\catalog_browsing\ViewTheMainDepartments.cs" />
+    <Compile Include="web\application\catalog_browsing\ViewTheProductsInADepartment.cs" />
     <Compile Include="web\aspnet\AspnetRequestHandler.cs" />
     <Compile Include="web\aspnet\ICreatePageInstances.cs" />
     <Compile Include="web\aspnet\ICreateViewsThatCanDisplayAReport.cs" />
@@ -103,6 +104,7 @@
     <Compile Include="web\core\ICreateAControllerRequest.cs" />
     <Compile Include="web\core\IDisplayInformation.cs" />
     <Compile Include="web\core\IFindCommandsThatCanProcessRequests.cs" />
+    <Compile Include="web\application\catalog_browsing\IFindProductsInADepartment.cs" />
     <Compile Include="web\core\IMatchARequest.cs" />
     <Compile Include="web\core\IProcessOneRequest.cs" />
     <Compile Include="web\core\IProcessWebRequests.cs" />

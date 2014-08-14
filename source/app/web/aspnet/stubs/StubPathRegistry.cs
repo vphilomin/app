@@ -10,6 +10,8 @@ namespace app.web.aspnet.stubs
     {
       if (typeof(Report) == typeof(IEnumerable<MainDepartmentLineItem>))
         return "~/views/DepartmentBrowser.aspx";
+      else if (typeof (Report) == typeof (IEnumerable<ProductInfoItem>))
+          return "~/views/ProductBrowser.aspx";
 
       throw new NotImplementedException();
     }
