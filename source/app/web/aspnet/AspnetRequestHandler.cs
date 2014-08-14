@@ -1,5 +1,5 @@
 ﻿using System.Web;
-using app.web.aspnet.stubs;
+using app.container;
 using app.web.core;
 
 namespace app.web.aspnet
@@ -9,8 +9,9 @@ namespace app.web.aspnet
     ICreateAControllerRequest request_factory;
     IProcessWebRequests front_controller;
 
-    public AspnetRequestHandler():this(
-      new FrontController(), WebStubs.request_factory )
+    public AspnetRequestHandler() : this(
+      Dependencies.fetch.an<IProcessWebRequests>(),
+      Dependencies.fetch.an<ICreateAControllerRequest>())
     {
     }
 
@@ -28,10 +29,7 @@ namespace app.web.aspnet
 
     public bool IsReusable
     {
-      get
-      {
-        return true;
-      }
+      get { return true; }
     }
   }
 }

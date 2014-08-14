@@ -1,5 +1,4 @@
-﻿using System.Web;
-using app.web.core;
+﻿using app.web.core;
 
 namespace app.web.aspnet
 {
@@ -13,11 +12,6 @@ namespace app.web.aspnet
     {
       this.current_context = current_context;
       this.view_factory = view_factory;
-    }
-
-    public WebFormDisplayEngine():this(() => HttpContext.Current,
-      new WebFormFactory())
-    {
     }
 
     public void display<ReportModel>(ReportModel model)

@@ -22,7 +22,7 @@ namespace app.web.aspnet.stubs
 
     public IProcessOneRequest report_for<Output>(IFetchData<Output> query)
     {
-      return new RequestCommand(x => true, new ViewA<Output>(query));
+      return new RequestCommand(x => true, new ViewA<Output>(null, query));
     }
 
     public IProcessOneRequest report_for<Output>(IRunAQuery<Output> query)

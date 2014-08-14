@@ -2,16 +2,16 @@
 
 namespace app.container
 {
-  public class Dependency
+  public class Dependencies
   {
-    public static ICreateTheContainerFacade create_the_container = delegate
+    public static IProvideAccessToTheContainerCreatedAtStartup provide_access_to_the_container = delegate
     {
       throw new NotImplementedException("This needs to be configured by a startup process");
     };
 
     public static IFetchDependencies fetch
     {
-        get { return create_the_container(); }
+        get { return provide_access_to_the_container(); }
     }
   }
 }
