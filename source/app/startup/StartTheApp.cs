@@ -8,7 +8,7 @@ namespace app.startup
 {
   public class StartTheApp
   {
-    public class LazyContainer : IFetchDependencies
+    class LazyContainer : IFetchDependencies
     {
       public Dependency an<Dependency>()
       {
@@ -24,7 +24,8 @@ namespace app.startup
     public static ICreateAStartupChain chain_builder = type =>
     {
       var factory_builder = new BuildDependencyFactories(new LazyContainer());
-      var factory = new StepFactory(() => new StartupServices(factory_builder));
+      var startup_services = new StartupServices(factory_builder);
+      var factory = new StepFactory(() => startup_services);
       IRun step = factory.create(type);
 
       return new StartupPipelineBuilder(step, factory, WebStubs.combine_actions);
