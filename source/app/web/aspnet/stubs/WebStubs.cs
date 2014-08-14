@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Web.Compilation;
 using app.basic_container;
 using app.web.core;
@@ -28,6 +29,9 @@ namespace app.web.aspnet.stubs
     {
       throw new NotImplementedException(string.Format("The type {0} could not be created", type), inner); 
     };
+
+    public static IPickTheCtorForAType greediest_picker =
+      x => x.GetConstructors().OrderByDescending(y => y.GetParameters().Count()).First();
 
     public class StubRequest : IProvideRequestDetails
     {
