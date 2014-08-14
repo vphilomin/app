@@ -23,11 +23,12 @@ namespace app.specs
       {
         display_engine = depends.on<IDisplayInformation>();
         department_finder = depends.on<IFindDepartments>();
+        input = new DeparmentsInDepartmentInput();
         request = fake.an<IProvideRequestDetails>();
-          request.setup(x => x.provide_request_details<string>()).Return("department");
+        request.setup(x => x.map<DeparmentsInDepartmentInput>()).Return(input);
         departments = new List<MainDepartmentLineItem>();
 
-        department_finder.setup(x => x.get_departments_of_department_specified_by_name("department")).Return(departments);
+        department_finder.setup(x => x.get_department_using(input) ).Return(departments);
       };
 
       Because b = () =>
@@ -40,6 +41,7 @@ namespace app.specs
       static IProvideRequestDetails request;
       static IDisplayInformation display_engine;
       static IEnumerable<MainDepartmentLineItem> departments;
+      static DeparmentsInDepartmentInput input;
     }
   }
 }

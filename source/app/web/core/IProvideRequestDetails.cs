@@ -1,14 +1,12 @@
-﻿using System.Security.Cryptography.X509Certificates;
-
-namespace app.web.core
+﻿namespace app.web.core
 {
   public interface IProvideRequestDetails
   {
-     T provide_request_details<T>();
+    InputModel map<InputModel>();
   }
 
-    public interface IProvideRequestDetailsOnADepartment
-    {
-        string get_department_name();
-    }
+  public interface IProvideRequestDetailsOnADepartment
+  {
+    string get_department_name();
+  }
 }

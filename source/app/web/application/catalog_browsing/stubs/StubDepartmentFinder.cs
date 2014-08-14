@@ -13,9 +13,13 @@ namespace app.web.application.catalog_browsing.stubs
       });
     }
 
-      public IEnumerable<MainDepartmentLineItem> get_departments_of_department_specified_by_name(string name)
+    public IEnumerable<MainDepartmentLineItem> get_department_using(DeparmentsInDepartmentInput input)
+    {
+      return Enumerable.Range(1, 1000).Select(x => new MainDepartmentLineItem
       {
-          throw new System.NotImplementedException();
-      }
+        name = x.ToString("Sub Department 0")
+      });
+    }
+
   }
 }
