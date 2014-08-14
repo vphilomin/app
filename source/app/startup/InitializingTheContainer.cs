@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using app.basic_container;
+﻿using app.basic_container;
 using app.container;
 using app.web.aspnet.stubs;
 
@@ -16,8 +15,7 @@ namespace app.startup
 
     public void run()
     {
-      var factories = new List<ICreateOneDependency>();
-      var dependency_factories = new DependencyFactories(factories, WebStubs.missing_dependency_factory);
+      var dependency_factories = new DependencyFactories(startup_services, WebStubs.missing_dependency_factory);
       var container = new Container(dependency_factories, WebStubs.dependency_creation_error);
       Dependencies.provide_access_to_the_container = () => container;
     }
