@@ -4,6 +4,7 @@ using app.web.core;
 
 namespace app.web.application.catalog_browsing
 {
+  //comment
   public class ViewTheMainDepartments : ISupportAUserStory
   {
     IFindDepartments department_finder;
