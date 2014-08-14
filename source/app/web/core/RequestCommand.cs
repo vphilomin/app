@@ -11,9 +11,9 @@
       this.feature = feature;
     }
 
-    public void process(IProvideRequestDetails request)
+    public void process(IProvideRequestDetails input)
     {
-      feature.process(request);
+      feature.process(input);
     }
 
     public bool can_process(IProvideRequestDetails request)
