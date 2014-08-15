@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using app.container;
 using app.web.application.catalog_browsing;
+using app.web.application.orders;
 using app.web.core;
 
 namespace app.web.aspnet.stubs
@@ -16,9 +17,16 @@ namespace app.web.aspnet.stubs
 
     public IEnumerator<IProcessOneRequest> GetEnumerator()
     {
+      yield return command_for<SubmitOrder, SubmitOrderInput>();
       yield return report_for(new GetTheProductsInADepartment());
       yield return report_for(new GetDepartmentsInDepartment());
       yield return report_for(new GetTheMainDepartments());
+    }
+
+    IProcessOneRequest command_for<Command, Input>() where Command : ISupportAUserStory, new()
+    {
+      return new RequestCommand(x => true,
+        new ValidatingFeature<Input>(new Command(), null));
     }
 
     public IProcessOneRequest report_for<Output>(IFetchData<Output> query)

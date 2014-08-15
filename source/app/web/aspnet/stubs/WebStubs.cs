@@ -42,8 +42,6 @@ namespace app.web.aspnet.stubs
       }
     }
 
-    public static ICombineActions combine_actions = (first, second) => new CombinedAction(first, second);
-
     public static Predicate<Type> is_a<T>()
     {
       return x => x == typeof(T);
