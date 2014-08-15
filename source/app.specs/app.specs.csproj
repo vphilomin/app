@@ -115,9 +115,11 @@
   <ItemGroup>
     <Compile Include="AspnetRequestHandlerSpecs.cs" />
     <Compile Include="AutomaticallyWiringFactorySpecs.cs" />
+    <Compile Include="EventBusSpecs.cs" />
     <Compile Include="CalculatorSpecs.cs" />
     <Compile Include="CombinedActionSpecs.cs" />
     <Compile Include="CommandRegistrySpecs.cs" />
+    <Compile Include="SubmitOrderSpecs.cs" />
     <Compile Include="ContainerSpecs.cs" />
     <Compile Include="DependenciesSpecs.cs" />
     <Compile Include="FrontControllerSpecs.cs" />
@@ -126,11 +128,13 @@
     <Compile Include="RequestCommandSpecs.cs" />
     <Compile Include="SimpleFactorySpecs.cs" />
     <Compile Include="StartTheAppSpecs.cs" />
+    <Compile Include="StartupItemsSpecs.cs" />
     <Compile Include="StartupPipelineBuilderSpecs.cs" />
     <Compile Include="StartupServicesSpecs.cs" />
     <Compile Include="StartupSpecs.cs" />
     <Compile Include="StepFactorySpecs.cs" />
     <Compile Include="utility\ObjectFactory.cs" />
+    <Compile Include="ValidatingFeatureSpecs.cs" />
     <Compile Include="ViewSpecs.cs" />
     <Compile Include="WebFormDisplayEngineSpecs.cs" />
     <Compile Include="WebFormFactorySpecs.cs" />

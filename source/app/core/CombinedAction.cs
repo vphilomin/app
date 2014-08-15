@@ -2,8 +2,8 @@
 {
   public class CombinedAction : IRun
   {
-    IRun first;
-    IRun second;
+    public IRun first;
+    public IRun second;
 
     public CombinedAction(IRun first, IRun second)
     {

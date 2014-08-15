@@ -28,7 +28,7 @@ namespace app.startup
       var factory = new StepFactory(() => startup_services);
       IRun step = factory.create(type);
 
-      return new StartupPipelineBuilder(step, factory, WebStubs.combine_actions);
+      return new StartupPipelineBuilder(step, factory, StartupItems.core.combine_actions);
     };
 
     public static IBuildAStartupChain by<StartupStep>() where StartupStep : IRunAStartupStep
